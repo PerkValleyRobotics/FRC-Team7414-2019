@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team7414.robot;
 
+import org.usfirst.frc.team7414.robot.Subsystems.DriveTrain;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,7 +19,9 @@ import edu.wpi.first.wpilibj.command.Scheduler;
  */
 public class Robot extends TimedRobot {
 	
-
+	public static OIHandler oi = new OIHandler();
+	public static DriveTrain difDrive = new DriveTrain();
+	
 	@Override
 	public void robotInit() {
 		
@@ -26,5 +30,9 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		
+	}
+	
+	public void teleOpDrive() {
+		 difDrive.drive(oi.getY(), oi.getX());
 	}
 }

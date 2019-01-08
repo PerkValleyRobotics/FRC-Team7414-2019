@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class OIHandler {
 	
+	private static int forkliftPosition = 0;
+	
 	public static Joystick joystick1 = new Joystick(PortMap.joystick);
 	
 	public double getY() {
@@ -29,7 +31,6 @@ public class OIHandler {
 	}
 	
 	public boolean triggerPressed() {
-		return joystick1.getTrigger();
-		
+		return joystick1.getTrigger();	
 	}
 }
